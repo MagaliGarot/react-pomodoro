@@ -1,23 +1,18 @@
-console.log("hello world");
+const React = require("react");
+const ReactDOM = require("react-dom");
+/////////////////////////////////////
+import Welcome from "./components/welcome";
+import Incrementer from "./components/incremeter";
 
-// JSX, et c’est une extension syntaxique de JavaScriptJSX,
-// et c’est une extension syntaxique de JavaScript
+///POMODORO///
 
-// import React from "react";
-// import { render } from "react-dom";
-// class HelloMessage extends React.Component {
-//     render() {
-//       return (
-//         <div>
-//           Hello {this.props.name}
-//         </div>
-//       );
-//     }
-//   }
+function Home() {
+    return (
+        <div>
+            <Welcome />
+            <Incrementer />
+        </div>
+    );
+}
 
-//   render(
-//     <HelloMessage name="Taylor" />,
-//     document.getElementById('hello-example')
-//   );
-
-// console.log("yo");
+ReactDOM.render(<Home />, document.querySelector("#app"));
