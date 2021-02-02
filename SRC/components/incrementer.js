@@ -1,4 +1,5 @@
 const React = require("react");
+///////////////////////////////
 
 class Incrementer extends React.Component {
     constructor(props) {
@@ -17,6 +18,14 @@ class Incrementer extends React.Component {
 
     increment() {
         this.setState((state, props) => ({n: state.n - props.step}));
+
+        //si ça arrive à 0 stop
+        if (this.state.n === 0) {
+            window.clearInterval(this.state.timer);
+            this.setState({
+                timer: null,
+            });
+        }
     }
 
     pause() {
@@ -33,8 +42,15 @@ class Incrementer extends React.Component {
     }
 
     manDecrement(e) {
-        e.preventDefault();
-        this.setState((state, props) => ({n: state.n - props.step * 60}));
+        if (this.state.n <= 100) {
+            window.clearInterval(this.state.timer);
+            this.setState({
+                timer: null,
+            });
+        } else {
+            e.preventDefault();
+            this.setState((state, props) => ({n: state.n - props.step * 60}));
+        }
     }
 
     manIncrement(e) {
@@ -56,7 +72,7 @@ class Incrementer extends React.Component {
             return `${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
         }
         return (
-            <>
+            <div className={"pomodoroApp"}>
                 <div className={"pomodoroApp__setTime"}>
                     <button
                         type={"button"}
@@ -75,8 +91,10 @@ class Incrementer extends React.Component {
                         {"+"}
                     </button>
                 </div>
-                <div>{toMinutesAndSeconds(this.state.n)}</div>
-                <div>
+                <div className={"compteur"}>
+                    {toMinutesAndSeconds(this.state.n)}
+                </div>
+                <div className={"pomodoroApp__IncrDecr"}>
                     {this.state.timer ? (
                         <button type={"button"} onClick={this.pause.bind(this)}>
                             {"Pause"}
@@ -90,7 +108,7 @@ class Incrementer extends React.Component {
                         {"Reset"}
                     </button>
                 </div>
-            </>
+            </div>
         );
     }
 }

@@ -1,0 +1,110 @@
+/*--------GENERAL--------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#eca7a8;
+}
+
+h1{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 8rem;
+    font-family: Helvetica;
+    color: white;
+}
+
+button{
+    background-color:#df4e51;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 800;
+    border-radius: 5px;
+    border-style: none;
+    padding: 20px 20px;
+    margin: 10px 10px;
+}
+
+/*--------TIMER 25 MINUTES--------*/
+
+.pomodoroApp{
+    width: 100%;
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pomodoroApp__setTime{
+    width: 100%;
+    max-width: 500px;
+    margin-right: 35%;
+    margin-left: 35%;
+}
+
+.pomodoroApp__IncrDecr{
+    width: 100%;
+    max-width: 500px;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+.compteur{
+    font-size: 10rem;
+    color: white;
+}
+
+/*--------MODAL--------*/
+
+.modalContainer{
+    background-color: rgb(250, 227, 227);
+    top: -1px;
+    width: 60rem;
+    height: 50rem;
+    position: absolute;
+    z-index:2;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    transition: all 0.3s ease-out;
+}
+
+.titleBreak{
+    text-align: center;
+    margin-top: 150px;
+    font-size: 8rem;
+    font-family: Helvetica;
+    color: #df4e51;
+}
+
+.buttonBreak{
+    margin-top: 40px;
+    margin-left: 800px;
+}
+
+.breakContainer{
+    margin-right: 30%;
+    margin-left: 30%;
+} 
+
+.compteurBreak{
+    font-size: 10rem;
+    color: white;
+    margin-right: 30%;
+    margin-left: 30%;
+}
+
+.breakButton{
+    margin-right: 35%;
+    margin-left: 35%;
+}
+
+.pauseButton{
+    position: absolute;
+    margin-top: -40rem;
+}
